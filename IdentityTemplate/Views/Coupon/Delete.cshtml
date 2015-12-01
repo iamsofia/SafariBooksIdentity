@@ -1,0 +1,72 @@
+﻿@model IdentityTemplate.Models.Coupon
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Coupon</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Active)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Active)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FreeShipIf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FreeShipIf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FreeShipAll)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FreeShipAll)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiscountTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiscountTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Discount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderThreshold)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderThreshold)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

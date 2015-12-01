@@ -1,0 +1,65 @@
+﻿@model IEnumerable<IdentityTemplate.Models.Coupon>
+
+
+        @{
+            ViewBag.Title = "Index";
+        }
+
+        <h2>Index</h2>
+
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.CouponID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FreeShipIf)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FreeShipAll)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DiscountTotal)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Discount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrderThreshold)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CouponID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FreeShipIf)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FreeShipAll)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DiscountTotal)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Discount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OrderThreshold)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.CouponID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.CouponID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.CouponID })
+                    </td>
+                </tr>
+            }
+
+        </table>

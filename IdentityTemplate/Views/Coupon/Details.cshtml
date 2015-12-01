@@ -1,0 +1,66 @@
+﻿@model IdentityTemplate.Models.Coupon
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Coupon</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Active)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Active)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FreeShipIf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FreeShipIf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FreeShipAll)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FreeShipAll)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiscountTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiscountTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Discount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderThreshold)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderThreshold)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CouponID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
