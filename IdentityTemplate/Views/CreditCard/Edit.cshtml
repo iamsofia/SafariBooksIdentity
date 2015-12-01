@@ -35,7 +35,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CardType, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CardType)
+                @Html.EnumDropDownList(model => model.CardType)
                 @Html.ValidationMessageFor(model => model.CardType)
             </div>
         </div>
