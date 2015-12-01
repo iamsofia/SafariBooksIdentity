@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace IdentityTemplate.Controllers
 {
+    [Authorize]
     public class CreditCardController : Controller
     {
         private AppDbContext db;
@@ -45,7 +46,7 @@ namespace IdentityTemplate.Controllers
         // GET: /CreditCard/Details/5
         public async Task<ActionResult> Details(int? id) 
         {
-            var currentUser = await manager.FindByIdAsync(User.Identity.GetUserId()); //mod
+            var currentUser = await manager.FindByIdAsync(User.Identity.GetUserId()); 
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
