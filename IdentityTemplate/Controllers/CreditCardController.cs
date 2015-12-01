@@ -17,8 +17,7 @@ namespace IdentityTemplate.Controllers
         // GET: /CreditCard/
         public ActionResult Index()
         {
-            var creditcards = db.CreditCards.Include(c => c.Customer);
-            return View(creditcards.ToList());
+            return View(db.CreditCards.ToList());
         }
 
         // GET: /CreditCard/Details/5
@@ -39,7 +38,6 @@ namespace IdentityTemplate.Controllers
         // GET: /CreditCard/Create
         public ActionResult Create()
         {
-            ViewBag.CustomerID = new SelectList(db.Customers, "CustomerID", "Email");
             return View();
         }
 
@@ -48,7 +46,7 @@ namespace IdentityTemplate.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="CreditCardID,CustomerID,CardName,CardNumber,CardType")] CreditCard creditcard)
+        public ActionResult Create([Bind(Include="CreditCardID,CardName,CardNumber,CardType")] CreditCard creditcard)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +55,6 @@ namespace IdentityTemplate.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CustomerID = new SelectList(db.Customers, "CustomerID", "Email", creditcard.CustomerID);
             return View(creditcard);
         }
 
@@ -73,7 +70,6 @@ namespace IdentityTemplate.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CustomerID = new SelectList(db.Customers, "CustomerID", "Email", creditcard.CustomerID);
             return View(creditcard);
         }
 
@@ -82,7 +78,7 @@ namespace IdentityTemplate.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="CreditCardID,CustomerID,CardName,CardNumber,CardType")] CreditCard creditcard)
+        public ActionResult Edit([Bind(Include="CreditCardID,CardName,CardNumber,CardType")] CreditCard creditcard)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +86,6 @@ namespace IdentityTemplate.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CustomerID = new SelectList(db.Customers, "CustomerID", "Email", creditcard.CustomerID);
             return View(creditcard);
         }
 

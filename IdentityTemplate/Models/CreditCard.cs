@@ -11,10 +11,11 @@ namespace IdentityTemplate.Models
     {
         public int CreditCardID { get; set; }
 
-        public int CustomerID { get; set; }
-        [ForeignKey("CustomerID")]
+        //public int CustomerID { get; set; }
+        //[ForeignKey("CustomerID")]
         public virtual Customer Customer { get; set; }
 
+        
         [Required]
         [Display(Name ="Card Name")]
         public string CardName { get; set; }

@@ -17,14 +17,6 @@
         @Html.HiddenFor(model => model.CreditCardID)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CustomerID, "CustomerID", new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("CustomerID", String.Empty)
-                @Html.ValidationMessageFor(model => model.CustomerID)
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.CardName, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.CardName)

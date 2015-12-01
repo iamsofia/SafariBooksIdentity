@@ -12,9 +12,6 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Customer.Email)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.CardName)
         </th>
         <th>
@@ -28,9 +25,6 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Customer.Email)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.CardName)
         </td>

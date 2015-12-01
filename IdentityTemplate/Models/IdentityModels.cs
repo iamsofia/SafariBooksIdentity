@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
 namespace IdentityTemplate.Models
 {
@@ -27,9 +28,9 @@ namespace IdentityTemplate.Models
 
         public int Zip { get; set; }
 
-        //public virtual ICollection<ToDo> ToDoes { get; set; }
+        public virtual ICollection<CreditCard> CreditCards { get; set; }
 
-        public virtual Customer Customer { get; set; }
+        //public virtual Customer Customer { get; set; }
         
         //This method allows you to create a new user
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser> manager)
