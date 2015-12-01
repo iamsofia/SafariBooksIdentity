@@ -9,14 +9,13 @@ namespace IdentityTemplate.Models
 {
     public class Order
     {
-        [Key]
         public int OrderID { get; set; }
 
-        //should point to identity models?
-        public int? CustomerID { get; set; }
-        [ForeignKey("CustomerID")]
-        public virtual Customer Customer { get; set; }
+        //should point to identity models
 
+        public virtual AppUser User { get; set; }
+        
+        
         public int SKU { get; set; }
         [ForeignKey("SKU")]
         public virtual Book Book { get; set; }
@@ -25,6 +24,9 @@ namespace IdentityTemplate.Models
         [ForeignKey("CouponID")]
         public virtual Coupon Coupon { get; set; }
 
+
+
+        
         public virtual List<Book> Books { get; set; }
 
     }

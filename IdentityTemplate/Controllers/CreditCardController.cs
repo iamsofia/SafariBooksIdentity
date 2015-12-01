@@ -7,18 +7,34 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using IdentityTemplate.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace IdentityTemplate.Controllers
 {
     public class CreditCardController : Controller
     {
-        private AppDbContext db = new AppDbContext();
+        private AppDbContext db;
+        private UserManager<AppUser> manager;
+
+        public CreditCardController()
+        {
+            db = new AppDbContext();
+            manager = new UserManager<AppUser>(new UserStore<AppUser>(db));
+
+        }
 
         // GET: /CreditCard/
         public ActionResult Index()
         {
             return View(db.CreditCards.ToList());
+
+            var currentUser = manager.FindById(User.Identity.GetUserId());
+            return View(db.CreditCards.ToList().Where(creditcard => creditcard.User.Id == currentUser.Id));
+
         }
+        //stopped here
+
 
         // GET: /CreditCard/Details/5
         public ActionResult Details(int? id)

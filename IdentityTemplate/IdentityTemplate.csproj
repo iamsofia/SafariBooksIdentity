@@ -167,7 +167,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CouponController.cs" />
     <Compile Include="Controllers\CreditCardController.cs" />
-    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RoleAdminController.cs" />
@@ -230,12 +229,18 @@
     <Compile Include="Migrations\201512010504532_id17.Designer.cs">
       <DependentUpon>201512010504532_id17.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512010619032_id18.cs" />
+    <Compile Include="Migrations\201512010619032_id18.Designer.cs">
+      <DependentUpon>201512010619032_id18.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512010642519_id19.cs" />
+    <Compile Include="Migrations\201512010642519_id19.Designer.cs">
+      <DependentUpon>201512010642519_id19.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Coupon.cs" />
-    <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\IdentityRoles.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -316,11 +321,6 @@
     <Content Include="Views\Coupon\Details.cshtml" />
     <Content Include="Views\Coupon\Edit.cshtml" />
     <Content Include="Views\Coupon\Index.cshtml" />
-    <Content Include="Views\Employee\Create.cshtml" />
-    <Content Include="Views\Employee\Delete.cshtml" />
-    <Content Include="Views\Employee\Details.cshtml" />
-    <Content Include="Views\Employee\Edit.cshtml" />
-    <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\CreditCard\Create.cshtml" />
     <Content Include="Views\CreditCard\Delete.cshtml" />
     <Content Include="Views\CreditCard\Details.cshtml" />
@@ -376,6 +376,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512010504532_id17.resx">
       <DependentUpon>201512010504532_id17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512010619032_id18.resx">
+      <DependentUpon>201512010619032_id18.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512010642519_id19.resx">
+      <DependentUpon>201512010642519_id19.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

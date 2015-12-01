@@ -20,6 +20,8 @@ namespace IdentityTemplate.Models
 
         public string CustomerReview { get; set; }
 
+        public virtual AppUser User { get; set; }
+
 
     }
 }

@@ -12,13 +12,17 @@ namespace IdentityTemplate.Models
     {
         public int ReorderID { get; set; }
 
-        public int EmployeeID { get; set; }
-        [ForeignKey("EmployeeID")]
-        public virtual Employee Employee { get; set; }
+        //public int EmployeeID { get; set; }
+        //[ForeignKey("EmployeeID")]
+        //public virtual Employee Employee { get; set; }
+
+        public virtual AppUser User { get; set; }
 
         public int SKU { get; set; }
         [ForeignKey("SKU")]
         public virtual Book Book { get; set; }
+
+
 
     }
 }

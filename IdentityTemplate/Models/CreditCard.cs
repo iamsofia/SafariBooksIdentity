@@ -12,16 +12,19 @@ namespace IdentityTemplate.Models
         public int CreditCardID { get; set; }
 
         //public int CustomerID { get; set; }
-        //[ForeignKey("CustomerID")]
-        public virtual Customer Customer { get; set; }
+        //[ForeignKey("Customer ID")]
+        //public virtual Customer Customer { get; set; }
+
+        public virtual AppUser User { get; set; }
 
         
         [Required]
         [Display(Name ="Card Name")]
         public string CardName { get; set; }
 
+        //Show only last 4 digits
         [Required]
-        [CreditCardAttribute]
+        [RegularExpression(@"^\d{16}$", ErrorMessage = "Card Number has 16 digits")]
         public string CardNumber { get; set; }
 
         public enum CreditTypes

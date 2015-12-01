@@ -30,7 +30,14 @@ namespace IdentityTemplate.Models
 
         public virtual ICollection<CreditCard> CreditCards { get; set; }
 
-        //public virtual Customer Customer { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
+
+        public virtual ICollection<Rating> MyRatings { get; set; }
+
+        public virtual ICollection<Review> MyReviews { get; set; }
+
+        public virtual ICollection<Reorder> Reorders { get; set; } //this is only for employees
+        
         
         //This method allows you to create a new user
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<AppUser> manager)
@@ -101,10 +108,6 @@ namespace IdentityTemplate.Models
         public System.Data.Entity.DbSet<IdentityTemplate.Models.AppRole> AppRoles { get; set; }
 
         public System.Data.Entity.DbSet<IdentityTemplate.Models.Coupon> Coupons { get; set; }
-
-        public System.Data.Entity.DbSet<IdentityTemplate.Models.Customer> Customers { get; set; }
-
-        public System.Data.Entity.DbSet<IdentityTemplate.Models.Employee> Employees { get; set; }
 
         public System.Data.Entity.DbSet<IdentityTemplate.Models.RegisterViewModel> RegisterViewModels { get; set; }
 
