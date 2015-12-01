@@ -27,7 +27,7 @@ namespace IdentityTemplate.Models
 
         public int Zip { get; set; }
 
-        public virtual ICollection<ToDo> ToDoes { get; set; }
+        //public virtual ICollection<ToDo> ToDoes { get; set; }
 
         public virtual Customer Customer { get; set; }
         
