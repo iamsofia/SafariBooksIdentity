@@ -239,6 +239,10 @@
     <Compile Include="Migrations\201512010642519_id19.Designer.cs">
       <DependentUpon>201512010642519_id19.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512020437146_Hello.cs" />
+    <Compile Include="Migrations\201512020437146_Hello.Designer.cs">
+      <DependentUpon>201512020437146_Hello.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201512040038124_ReviewClassUpdate.cs" />
     <Compile Include="Migrations\201512040038124_ReviewClassUpdate.Designer.cs">
       <DependentUpon>201512040038124_ReviewClassUpdate.cs</DependentUpon>
@@ -413,6 +417,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512010642519_id19.resx">
       <DependentUpon>201512010642519_id19.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512020437146_Hello.resx">
+      <DependentUpon>201512020437146_Hello.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512040038124_ReviewClassUpdate.resx">
       <DependentUpon>201512040038124_ReviewClassUpdate.cs</DependentUpon>
