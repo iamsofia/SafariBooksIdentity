@@ -24,7 +24,9 @@
                                            name="submit"
                                            value="Search" />
         }
-
+        @using (Html.BeginForm("Index", "Book"))
+        { <input type="button" name="AllBooks" onclick="AllBooks" value="Show All Books" />
+        }
     </p>
 
 

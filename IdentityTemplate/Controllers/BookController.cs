@@ -17,7 +17,7 @@ namespace IdentityTemplate.Controllers
         private AppDbContext db = new AppDbContext();
 
         // GET: /Book/
-        public ActionResult Index(string option, string search)
+        public ActionResult Index(string option, string search, string AllBooks)
         {
             var books = from m in db.Books
                         select m;
@@ -45,7 +45,9 @@ namespace IdentityTemplate.Controllers
             {
                 return View(db.Books);
             }
-        
+            if (AllBooks == null)
+            { return View(db.Books);
+        }
          return View();
              }
             //if (!String.IsNullOrEmpty(searchString))
