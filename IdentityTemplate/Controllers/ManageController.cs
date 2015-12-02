@@ -16,6 +16,7 @@ namespace IdentityTemplate.Controllers
         private ApplicationSignInManager _signInManager;
         private AppUserManager _userManager;
 
+       
         public ManageController()
         {
         }
@@ -140,6 +141,8 @@ namespace IdentityTemplate.Controllers
         }
 
         //
+
+
       
 
         protected override void Dispose(bool disposing)

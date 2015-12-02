@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using IdentityTemplate.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace IdentityTemplate.Controllers
 {
@@ -18,8 +19,14 @@ namespace IdentityTemplate.Controllers
         private ApplicationSignInManager _signInManager;
         private AppUserManager _userManager;
 
+        private AppDbContext db;
+        private UserManager<AppUser> manager;
+
+
         public AccountController()
         {
+            db = new AppDbContext();
+            manager = new UserManager<AppUser>(new UserStore<AppUser>(db));
         }
 
         public AccountController(AppUserManager userManager, ApplicationSignInManager signInManager )
@@ -298,6 +305,47 @@ namespace IdentityTemplate.Controllers
             return View();
         }
 
+        // GET: /Account/ExternalLoginFailure
+        [Authorize]
+        public ActionResult Edit()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ActionName("Edit")]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Edit(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Get the current application user
+                var user = await UserManager.FindByNameAsync(model.Email);
+
+                // Update the details
+
+                user = new AppUser { UserName = model.Email, Email = model.Email, FName = model.FName, LName = model.LName, Address = model.Address, Zip = model.Zip, PhoneNumber = model.Phone };
+
+                var result = await manager.UpdateAsync(user);
+
+                // However, it always succeeds inspite of not updating the database
+                if (result.Succeeded)
+                {
+                    await db.SaveChangesAsync();
+                    //db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+
+                    return RedirectToAction("Account");
+                    
+                }
+                AddErrors(result);
+                
+            }
+            return View();
+                       
+        }
+
+        //
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -317,6 +365,7 @@ namespace IdentityTemplate.Controllers
 
             base.Dispose(disposing);
         }
+
 
         #region Helpers
         // Used for XSRF protection when adding external logins

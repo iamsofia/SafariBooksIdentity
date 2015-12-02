@@ -138,5 +138,7 @@ namespace IdentityTemplate.Controllers
 
             return View(model);
         }
+
+       
 	}
 }
