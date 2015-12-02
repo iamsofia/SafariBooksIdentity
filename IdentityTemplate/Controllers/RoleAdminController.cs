@@ -111,5 +111,11 @@ namespace IdentityTemplate.Controllers
                 return HttpContext.GetOwinContext().GetUserManager<AppRoleManager>();
             }
         }
+
+        //// GET: /List of Customers/
+        //public ActionResult AllCustomers()
+        //{
+            
+        //}
 	}
 }
