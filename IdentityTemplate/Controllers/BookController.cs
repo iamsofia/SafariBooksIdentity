@@ -24,13 +24,22 @@ namespace IdentityTemplate.Controllers
 
             if (option == "Title")
             {
-                return View(db.Books.Where(x = > x.Title == search || search == null).ToList());
+                return View(db.Books.Where(x=>x.Title.Contains(search) || search == null).ToList());
 
             } else if (option == "Genre") {
-                return View(db.Books.Where(x = > x.Genre == search || search == null).ToList());
+                return View(db.Books.Where(x=>x.Genre.Contains(search) || search == null).ToList());
             }
-            
-
+            else if (option == "Author")
+            {
+                return View(db.Books.Where(x=>x.AuthorFirst.Contains(search) || x.AuthorLast.Contains(search) || search == null).ToList());
+            }
+        else if (option == null)
+            {
+                return View(db.Books);
+}
+        
+         return View();
+             }
             //if (!String.IsNullOrEmpty(searchString))
             //{
             //    books = books.Where(s => s.Title.Contains(searchString));
@@ -38,9 +47,9 @@ namespace IdentityTemplate.Controllers
             //}
 
 
-            return View(books);
+            //return View(books);
             
-        }
+        
 
         // GET: /Book/Details/5
         public ActionResult Details(int? id)
@@ -55,7 +64,7 @@ namespace IdentityTemplate.Controllers
                 return HttpNotFound();
             }
             return View(book);
-        }
+}
 
         // GET: /Book/Create
         public ActionResult Create()

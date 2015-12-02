@@ -1,104 +1,105 @@
 ﻿@model IEnumerable<IdentityTemplate.Models.Book>
 
-@{
-    ViewBag.Title = "Index";
-}
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-   
-
-    @using(Html.BeginForm("Index", "Book", FormMethod.Get)) { 
-        <
-        b > Search Option:  < /b>@Html.RadioButton("option", "Title") <text>Title</text> @Html.RadioButton("option", "Genre") <text> Genre </text>
-   @Html.RadioButton("option", "AuthorFirst")
-    <text>Author</text> @Html.TextBox("search") <input type="submit"
-                                                        name="submit"
-                                                        value="Search" />
-    @*<p>Find by Title: @Html.TextBox("searchString")<br />
-        <input type="submit" value="Search" /></p>*@
+    @{
+        ViewBag.Title = "Index";
     }
-</p>      
-        
+
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+
+        @* System.Web.Mvc.FormMethod.Get *@
+        @using (Html.BeginForm("Index", "Book"))
+        {    <b> Search Option:  </b>
+            @Html.RadioButton("option", "Title") <text>Title</text>
+            @Html.RadioButton("option", "Genre") <text> Genre </text>
+            @Html.RadioButton("option", "AuthorFirst") <text>Author</text>
+            @Html.TextBox("search") <input type="submit"
+                                           name="submit"
+                                           value="Search" />
+        }
+
+    </p>
 
 
 
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AuthorFirst)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AuthorLast)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Genre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PublicationDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PriceLastPaid)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Inventory)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReorderPoint)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Discontinued)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AuthorFirst)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AuthorLast)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Genre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PublicationDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PriceLastPaid)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Inventory)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReorderPoint)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Discontinued)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.SKU }) |
-            @Html.ActionLink("Details", "Details", new { id=item.SKU }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.SKU })
-        </td>
-    </tr>
-}
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuthorFirst)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuthorLast)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PublicationDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PriceLastPaid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Inventory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReorderPoint)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Discontinued)
+            </th>
+            <th></th>
+        </tr>
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AuthorFirst)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AuthorLast)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PublicationDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PriceLastPaid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Inventory)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReorderPoint)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Discontinued)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.SKU }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.SKU }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.SKU })
+                </td>
+            </tr>
+        }
+
+    </table>
