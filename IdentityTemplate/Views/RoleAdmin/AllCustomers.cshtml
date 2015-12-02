@@ -1,0 +1,22 @@
+﻿
+@model IdentityTemplate.Models.GroupedUserViewModel
+@{
+    ViewBag.Title = "AllCustomers";
+}
+
+<h4>All Customers</h4>
+<div>
+    @foreach (var user in Model.Customers)
+    {
+        <p>
+            <strong>@user.Username | @user.Roles </strong>
+        </p>
+    }
+
+    @*@foreach (var user in Model.Users)
+        {
+            <p>
+                <strong>@user.Username | @user.Roles </strong>
+            </p>
+        }*@
+</div>
