@@ -15,6 +15,14 @@ namespace IdentityTemplate.Controllers
 {
     public class RoleAdminController : Controller
     {
+        private AppDbContext db;
+
+        public RoleAdminController()
+        {
+            db = new AppDbContext();
+            //manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+        }
+
         //
         // GET: /RoleAdmin/
         public ActionResult Index()
@@ -112,10 +120,23 @@ namespace IdentityTemplate.Controllers
             }
         }
 
-        //// GET: /List of Customers/
-        //public ActionResult AllCustomers()
-        //{
-            
-        //}
+        public ActionResult AllCustomers()
+        {
+            //AppRole roleName = RoleManager.FindByName(role);
+
+            var allusers = db.Users.ToList();
+            var users = allusers.Where(x => x.Roles.Select(role => role.RoleId).Contains("f32fa611-547f-4761-bfa3-9682f677e04c")).ToList();
+            var userVM = users.Select(user => new UserViewModel { Username = user.UserName, Roles = string.Join(",", user.Roles.Select(role => role.RoleId)) }).ToList();
+
+            var customers = allusers.Where(x => x.Roles.Select(role => role.RoleId).Contains("04d2547f-4935-4842-add6-a0a1229eae16")).ToList();
+            var customersVM = customers.Select(user => new UserViewModel { Username = user.UserName, Roles = string.Join(",", user.Roles.Select(role => role.RoleId)) }).ToList();
+            var model = new GroupedUserViewModel { Customers = userVM, Managers = customersVM };
+
+            //var managers = allusers.Where(x => x.Roles.Select(role => role.Name).Contains("Manager")).ToList();
+            //var managersVM = managers.Select(user => new UserViewModel { Username = user.FullName, Roles = string.Join(",", user.Roles.Select(role => role.Name)) }).ToList();
+            //var model = new GroupedUserViewModel { Customers = userVM, Managers = managersVM };
+
+            return View(model);
+        }
 	}
 }

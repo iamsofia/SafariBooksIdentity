@@ -8,6 +8,7 @@ namespace IdentityTemplate.Models
    
         public class GroupedUserViewModel
         {
+            public List<UserViewModel> Customers { get; set; }
             public List<UserViewModel> Users { get; set; }
             public List<UserViewModel> Employees { get; set; }
             public List<UserViewModel> Managers { get; set; }
