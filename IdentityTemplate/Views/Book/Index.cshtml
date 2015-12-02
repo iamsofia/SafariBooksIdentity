@@ -8,20 +8,19 @@
 
 <p>
     @Html.ActionLink("Create New", "Create")
-</p>
-        
+   
 
-    @using (Html.BeginForm())
-    {
-        
-        <p>
-            Search: @Html.TextBox("searchString")
-           
-                 <input type="submit" value="Filter" />
-        </p>
+    @using(Html.BeginForm("Index", "Book", FormMethod.Get)) { 
+        <
+        b > Search Option:  < /b>@Html.RadioButton("option", "Title") <text>Title</text> @Html.RadioButton("option", "Genre") <text> Genre </text>
+   @Html.RadioButton("option", "AuthorFirst")
+    <text>Author</text> @Html.TextBox("search") <input type="submit"
+                                                        name="submit"
+                                                        value="Search" />
+    @*<p>Find by Title: @Html.TextBox("searchString")<br />
+        <input type="submit" value="Search" /></p>*@
     }
-
-        
+</p>      
         
 
 

@@ -17,19 +17,28 @@ namespace IdentityTemplate.Controllers
         private AppDbContext db = new AppDbContext();
 
         // GET: /Book/
-        public ActionResult Index(string searchString)
+        public ActionResult Index(string option, string search)
         {
             var books = from m in db.Books
                         select m;
 
-            if (!String.IsNullOrEmpty(searchString))
+            if (option == "Title")
             {
-                books = books.Where(s => s.Title.Contains(searchString));
-                
+                return View(db.Books.Where(x = > x.Title == search || search == null).ToList());
+
+            } else if (option == "Genre") {
+                return View(db.Books.Where(x = > x.Genre == search || search == null).ToList());
             }
+            
+
+            //if (!String.IsNullOrEmpty(searchString))
+            //{
+            //    books = books.Where(s => s.Title.Contains(searchString));
+                
+            //}
 
 
-            return View(db.Books.ToList());
+            return View(books);
             
         }
 
