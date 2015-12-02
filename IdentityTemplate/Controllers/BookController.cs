@@ -24,19 +24,27 @@ namespace IdentityTemplate.Controllers
 
             if (option == "Title")
             {
-                return View(db.Books.Where(x=>x.Title.Contains(search) || search == null).ToList());
-
-            } else if (option == "Genre") {
-                return View(db.Books.Where(x=>x.Genre.Contains(search) || search == null).ToList());
+                return View(db.Books.Where(x => x.Title.Contains(search) || search == null).ToList());
             }
-            else if (option == "Author")
+            //} else if (option == "SKU") {
+            //    return View(db.Books.Where(x=>x.SKU == search || search == null).ToList());
+            //}
+            else if (option == "Genre")
             {
-                return View(db.Books.Where(x=>x.AuthorFirst.Contains(search) || x.AuthorLast.Contains(search) || search == null).ToList());
+                return View(db.Books.Where(x => x.Genre.Contains(search) || search == null).ToList());
             }
-        else if (option == null)
+            else if (option == "AuthorFirst,AuthorLast")
+            {
+                return View(db.Books.Where(x => x.AuthorFirst.Contains(search) || x.AuthorLast.Contains(search) || search == null).ToList());
+            }
+            else if (option == "AuthorFirst,AuthorLast")
+            {
+                return View(db.Books.Where(x => x.AuthorFirst.Contains(search) || x.AuthorLast.Contains(search) || x.Title.Contains(search) || search == null).ToList());
+            }
+            else if (option == null)
             {
                 return View(db.Books);
-}
+            }
         
          return View();
              }

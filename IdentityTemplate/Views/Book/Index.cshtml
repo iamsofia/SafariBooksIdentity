@@ -12,9 +12,14 @@
         @* System.Web.Mvc.FormMethod.Get *@
         @using (Html.BeginForm("Index", "Book"))
         {    <b> Search Option:  </b>
-            @Html.RadioButton("option", "Title") <text>Title</text>
             @Html.RadioButton("option", "Genre") <text> Genre </text>
-            @Html.RadioButton("option", "AuthorFirst") <text>Author</text>
+            @Html.RadioButton("option", "Title") <text>Title</text>
+            @Html.RadioButton("option", "AuthorFirst,AuthorLast") <text>Author</text>
+            @Html.RadioButton("option", "Title,AuthorFirst,AuthorLast") <text>Title & Author</text>
+            @*@Html.RadioButton("option", "SKU") <text> SKU </text>*@
+            
+            
+            
             @Html.TextBox("search") <input type="submit"
                                            name="submit"
                                            value="Search" />
