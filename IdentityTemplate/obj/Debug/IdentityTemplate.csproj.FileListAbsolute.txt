@@ -359,3 +359,6 @@ C:\Users\David\Documents\GitHub\SafariBooksIdentity\IdentityTemplate\bin\Microso
 C:\Users\David\Documents\GitHub\SafariBooksIdentity\IdentityTemplate\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\David\Documents\GitHub\SafariBooksIdentity\IdentityTemplate\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\David\Documents\GitHub\SafariBooksIdentity\IdentityTemplate\obj\Debug\IdentityTemplate.Migrations._45.resources
+C:\Users\Sofia\Documents\GitHub\SafariBooksIdentity\IdentityTemplate\obj\Debug\IdentityTemplate.Migrations.issue.resources
+C:\Users\Sofia\Documents\GitHub\SafariBooksIdentity\IdentityTemplate\obj\Debug\IdentityTemplate.Migrations.issue2.resources
+C:\Users\Sofia\Documents\GitHub\SafariBooksIdentity\IdentityTemplate\obj\Debug\IdentityTemplate.Migrations.issue3.resources
