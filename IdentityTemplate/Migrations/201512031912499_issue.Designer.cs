@@ -7,13 +7,13 @@ namespace IdentityTemplate.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class _45 : IMigrationMetadata
+    public sealed partial class issue : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(_45));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(issue));
         
         string IMigrationMetadata.Id
         {
-            get { return "201512031725389_45"; }
+            get { return "201512031912499_issue"; }
         }
         
         string IMigrationMetadata.Source

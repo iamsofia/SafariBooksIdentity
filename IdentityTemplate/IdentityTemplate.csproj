@@ -248,9 +248,17 @@
     <Compile Include="Migrations\201512030658409_phonenumber.Designer.cs">
       <DependentUpon>201512030658409_phonenumber.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201512031725389_45.cs" />
-    <Compile Include="Migrations\201512031725389_45.Designer.cs">
-      <DependentUpon>201512031725389_45.cs</DependentUpon>
+    <Compile Include="Migrations\201512031912499_issue.cs" />
+    <Compile Include="Migrations\201512031912499_issue.Designer.cs">
+      <DependentUpon>201512031912499_issue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512031921467_issue2.cs" />
+    <Compile Include="Migrations\201512031921467_issue2.Designer.cs">
+      <DependentUpon>201512031921467_issue2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512031929589_issue3.cs" />
+    <Compile Include="Migrations\201512031929589_issue3.Designer.cs">
+      <DependentUpon>201512031929589_issue3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201512040038124_ReviewClassUpdate.cs" />
     <Compile Include="Migrations\201512040038124_ReviewClassUpdate.Designer.cs">
@@ -437,8 +445,14 @@
     <EmbeddedResource Include="Migrations\201512030658409_phonenumber.resx">
       <DependentUpon>201512030658409_phonenumber.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512031725389_45.resx">
-      <DependentUpon>201512031725389_45.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512031912499_issue.resx">
+      <DependentUpon>201512031912499_issue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512031921467_issue2.resx">
+      <DependentUpon>201512031921467_issue2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512031929589_issue3.resx">
+      <DependentUpon>201512031929589_issue3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512040038124_ReviewClassUpdate.resx">
       <DependentUpon>201512040038124_ReviewClassUpdate.cs</DependentUpon>

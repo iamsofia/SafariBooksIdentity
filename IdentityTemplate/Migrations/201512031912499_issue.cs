@@ -3,15 +3,11 @@ namespace IdentityTemplate.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class _45 : DbMigration
+    public partial class issue : DbMigration
     {
         public override void Up()
         {
-            DropForeignKey("dbo.Ratings", "SKU", "dbo.Books");
-            DropForeignKey("dbo.Ratings", "User_Id", "dbo.AspNetUsers");
-            DropIndex("dbo.Ratings", new[] { "SKU" });
-            DropIndex("dbo.Ratings", new[] { "User_Id" });
-            DropTable("dbo.Ratings");
+            
         }
         
         public override void Down()
