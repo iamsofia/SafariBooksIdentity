@@ -28,6 +28,8 @@ namespace IdentityTemplate.Models
 
         public int Zip { get; set; }
 
+        public string PhoneNumber { get; set; }
+
         public virtual ICollection<CreditCard> CreditCards { get; set; }
 
         public virtual ICollection<Order> Orders { get; set; }

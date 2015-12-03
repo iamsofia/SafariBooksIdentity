@@ -3,7 +3,7 @@ namespace IdentityTemplate.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class fix : DbMigration
+    public partial class phonenumber : DbMigration
     {
         public override void Up()
         {

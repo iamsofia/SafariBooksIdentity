@@ -134,6 +134,7 @@ namespace IdentityTemplate.Controllers
 
             
                         await UserManager.AddToRoleAsync(user.Id, "Customer");
+                        //await UserManager.AddToRoleAsync(user.Id, "User");
                         //await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
 
                     
@@ -185,6 +186,7 @@ namespace IdentityTemplate.Controllers
                 if (result.Succeeded)
                 {
                     await UserManager.AddToRoleAsync(user.Id, "Employee");
+                    //await UserManager.AddToRoleAsync(user.Id, "User");
 
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 

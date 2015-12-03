@@ -7,13 +7,13 @@ namespace IdentityTemplate.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class fix : IMigrationMetadata
+    public sealed partial class phonenumber : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(fix));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(phonenumber));
         
         string IMigrationMetadata.Id
         {
-            get { return "201512030618225_fix"; }
+            get { return "201512030658409_phonenumber"; }
         }
         
         string IMigrationMetadata.Source
