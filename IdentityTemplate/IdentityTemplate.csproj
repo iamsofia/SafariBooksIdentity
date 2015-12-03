@@ -368,6 +368,7 @@
     <Content Include="Views\Book\Index.cshtml" />
     <Content Include="Views\RoleAdmin\AllCustomers.cshtml" />
     <Content Include="Views\Account\Edit.cshtml" />
+    <Content Include="Views\RoleAdmin\AllEmployees.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

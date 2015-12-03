@@ -1,0 +1,37 @@
+﻿@model IdentityTemplate.Models.GroupedUserViewModel
+@{
+    ViewBag.Title = "AllEmployees";
+}
+
+<h4>All Customers</h4>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">All Employees</div>
+    <table class="table table-striped">
+        <tr>
+            <th>User Name</th>
+            <th>Details</th>
+
+        </tr>
+
+
+        @foreach (var user in Model.Employees)
+        {
+            <tr>
+                <td>
+                    <strong>@user.Username </strong>
+                </td>
+                <td>
+
+                    @*@Html.ActionLink("Details", "Index", "Manage", new { id = user.Id }, new { @class = "btn btn-primary btn-xs" }) |*@
+
+                </td>
+            </tr>
+
+        }
+    </table>
+</div>
+
+
+
+
