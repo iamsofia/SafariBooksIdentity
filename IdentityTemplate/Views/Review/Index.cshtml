@@ -18,10 +18,10 @@
             @Html.DisplayNameFor(model => model.CustomerReview)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CustomerRating)
+            @Html.DisplayNameFor(model => model.ReviewApproval)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ReviewApproval)
+            @Html.DisplayNameFor(model => model.CustomerRating)
         </th>
         <th></th>
     </tr>
@@ -35,10 +35,10 @@
             @Html.DisplayFor(modelItem => item.CustomerReview)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CustomerRating)
+            @Html.DisplayFor(modelItem => item.ReviewApproval)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ReviewApproval)
+            @Html.DisplayFor(modelItem => item.CustomerRating)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ReviewID }) |

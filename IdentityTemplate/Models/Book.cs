@@ -35,7 +35,6 @@ namespace IdentityTemplate.Models
 
         //public bool Active { get; set; }
 
-        public virtual List<Rating> AvgRating { get; set; } //need to display average here
 
         public virtual List<Review> Reviews { get; set; }
         

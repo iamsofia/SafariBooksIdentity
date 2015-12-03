@@ -35,7 +35,6 @@ namespace IdentityTemplate.Models
 
         public virtual ICollection<Order> Orders { get; set; }
 
-        public virtual ICollection<Rating> MyRatings { get; set; }
 
         public virtual ICollection<Review> MyReviews { get; set; }
 

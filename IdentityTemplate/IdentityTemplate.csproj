@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -247,6 +248,10 @@
     <Compile Include="Migrations\201512030658409_phonenumber.Designer.cs">
       <DependentUpon>201512030658409_phonenumber.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512031725389_45.cs" />
+    <Compile Include="Migrations\201512031725389_45.Designer.cs">
+      <DependentUpon>201512031725389_45.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201512040038124_ReviewClassUpdate.cs" />
     <Compile Include="Migrations\201512040038124_ReviewClassUpdate.Designer.cs">
       <DependentUpon>201512040038124_ReviewClassUpdate.cs</DependentUpon>
@@ -276,7 +281,6 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Promotion.cs" />
-    <Compile Include="Models\Rating.cs" />
     <Compile Include="Models\Reorder.cs" />
     <Compile Include="Models\Review.cs" />
     <Compile Include="Models\RoleViewModels.cs" />
@@ -357,10 +361,6 @@
     <Content Include="Views\CreditCard\Details.cshtml" />
     <Content Include="Views\CreditCard\Edit.cshtml" />
     <Content Include="Views\CreditCard\Index.cshtml" />
-    <Content Include="Views\Review\Create.cshtml" />
-    <Content Include="Views\Review\Details.cshtml" />
-    <Content Include="Views\Review\Edit.cshtml" />
-    <Content Include="Views\Review\Index.cshtml" />
     <Content Include="Views\Book\Create.cshtml" />
     <Content Include="Views\Book\Delete.cshtml" />
     <Content Include="Views\Book\Details.cshtml" />
@@ -369,6 +369,11 @@
     <Content Include="Views\RoleAdmin\AllCustomers.cshtml" />
     <Content Include="Views\Account\Edit.cshtml" />
     <Content Include="Views\RoleAdmin\AllEmployees.cshtml" />
+    <Content Include="Views\Review\Create.cshtml" />
+    <Content Include="Views\Review\Delete.cshtml" />
+    <Content Include="Views\Review\Details.cshtml" />
+    <Content Include="Views\Review\Edit.cshtml" />
+    <Content Include="Views\Review\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -431,6 +436,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512030658409_phonenumber.resx">
       <DependentUpon>201512030658409_phonenumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512031725389_45.resx">
+      <DependentUpon>201512031725389_45.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512040038124_ReviewClassUpdate.resx">
       <DependentUpon>201512040038124_ReviewClassUpdate.cs</DependentUpon>
