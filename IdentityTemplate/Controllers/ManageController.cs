@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using IdentityTemplate.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace IdentityTemplate.Controllers
 {
@@ -16,9 +17,13 @@ namespace IdentityTemplate.Controllers
         private ApplicationSignInManager _signInManager;
         private AppUserManager _userManager;
 
-       
+        private AppDbContext db;
+        private UserManager<AppUser> manager;
+
         public ManageController()
         {
+            db = new AppDbContext();
+            manager = new UserManager<AppUser>(new UserStore<AppUser>(db));
         }
 
         public ManageController(AppUserManager userManager, ApplicationSignInManager signInManager)
@@ -73,8 +78,23 @@ namespace IdentityTemplate.Controllers
                 Logins = await UserManager.GetLoginsAsync(userId),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
+
+            if (ModelState.IsValid)
+            {
+                var currentUserID = User.Identity.GetUserId();
+                var manager = new UserManager<AppUser>(new UserStore<AppUser>(new AppDbContext()));
+                var currentUser = manager.FindById(User.Identity.GetUserId());
+
+                 ViewData.Add("Email", currentUser.Email);
+                 ViewData.Add("FName", currentUser.FName);
+                 ViewData.Add("MI", currentUser.MI);
+                 ViewData.Add("LName", currentUser.LName);
+                 ViewData.Add("Address", currentUser.Address);
+                 ViewData.Add("Zip", currentUser.Zip);
+                 ViewData.Add("Phone", currentUser.PhoneNumber);
+}
             return View(model);
-        }
+            }
 
        
         //
