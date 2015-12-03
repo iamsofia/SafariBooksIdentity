@@ -118,7 +118,7 @@ namespace IdentityTemplate.Controllers
             if (ModelState.IsValid)
             {
                 //TODO: Add fields to user here so they will be saved to the database
-                var user = new AppUser { UserName = model.Email, Email = model.Email, FName = model.FName, LName = model.LName, Address = model.Address, Zip = model.Zip, PhoneNumber = model.Phone};
+                var user = new AppUser { UserName = model.Email, Email = model.Email, FName = model.FName, MI = model.MI, LName = model.LName, Address = model.Address, Zip = model.Zip, PhoneNumber = model.Phone};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 
 

@@ -91,7 +91,7 @@ namespace IdentityTemplate.Controllers
                  ViewData.Add("LName", currentUser.LName);
                  ViewData.Add("Address", currentUser.Address);
                  ViewData.Add("Zip", currentUser.Zip);
-                 ViewData.Add("Phone", currentUser.PhoneNumber);
+                 ViewData.Add("PhoneNumber", currentUser.PhoneNumber);
 }
             return View(model);
             }
