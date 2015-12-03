@@ -6,23 +6,63 @@
 <h2>@ViewBag.Title.</h2>
 
 <p class="text-success">@ViewBag.StatusMessage</p>
-<div>
-    <h4>Change your account settings</h4>
-    <hr />
-    <dl class="dl-horizontal">
 
-        <dt>Profile:</dt>
+<div class="panel panel-primary">
+    <div class="panel-heading">Roles</div>
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Users</th>
+            <th></th>
+        </tr>
+        @if (Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="4" class="text-center">No roles</td>
+            </tr>
+        }
+        else
+        {
+            foreach (AppRole role in Model)
+            {
+                <tr>
+                    <td>User.Id</td>
+                    <td>@role.Name</td>
+                    <td>
+                        @if (role.Users == null || role.Users.Count == 0)
+                        {
+                            @: No Users in role
+                        }
+                        else
+                        {
+                            <p>@string.Join(", ", role.Users.Select(x => Html.GetUserName(x.UserId)))</p>
+                        }
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = role.Id }, new { @class = "btn btn-primary btn-xs" })
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+    <div>
+        <h4>Change your account settings</h4>
+        <hr />
+        <dl class="dl-horizontal">
 
-        <dd>Email: @ViewBag.Email</dd>
-        <dd>First Name: @ViewBag.FName</dd>
-        <dd>Middle Initial: @ViewBag.MI</dd>
-        <dd>Last Name: @ViewBag.LName</dd>
-        <dd>Address: @ViewBag.Address</dd>
-        <dd>Zip Code: @ViewBag.Zip</dd>
-        <dd>Phone Number: @ViewBag.PhoneNumber</dd>
+            <dt>Profile:</dt>
 
-        @*button to edit*@
-        @Html.ActionLink("Edit your profile", "Edit", "Account")
+            <dd>Email: @ViewBag.Email</dd>
+            <dd>First Name: @ViewBag.FName</dd>
+            <dd>Middle Initial: @ViewBag.MI</dd>
+            <dd>Last Name: @ViewBag.LName</dd>
+            <dd>Address: @ViewBag.Address</dd>
+            <dd>Zip Code: @ViewBag.Zip</dd>
+            <dd>Phone Number: @ViewBag.PhoneNumber</dd>
+
+            @*button to edit*@
+            @Html.ActionLink("Edit your profile", "Edit", "Account")
         </dl>
 
         <dl class="dl-horizontal">
@@ -40,10 +80,10 @@
                 ]
             </dd>
             @*<dt>External Logins:</dt>
-            <dd>
-                @Model.Logins.Count [
-                @Html.ActionLink("Manage", "ManageLogins") ]
-            </dd>*@
+                <dd>
+                    @Model.Logins.Count [
+                    @Html.ActionLink("Manage", "ManageLogins") ]
+                </dd>*@
             @*
                 Phone Numbers can used as a second factor of verification in a two-factor authentication system.
 
@@ -70,31 +110,31 @@
                 </dd>
             *@
             @*<dt>Two-Factor Authentication:</dt>
-            <dd>
-                <p>
-                    There are no two-factor authentication providers configured. See <a href="http://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
-                    for details on setting up this ASP.NET application to support two-factor authentication.
-                </p>*@
-                @*@if (Model.TwoFactor)
+                <dd>
+                    <p>
+                        There are no two-factor authentication providers configured. See <a href="http://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
+                        for details on setting up this ASP.NET application to support two-factor authentication.
+                    </p>*@
+            @*@if (Model.TwoFactor)
+                {
+                    using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                     {
-                        using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                        {
-                            @Html.AntiForgeryToken()
-                            <text>Enabled
-                            <input type="submit" value="Disable" class="btn btn-link" />
-                            </text>
-                        }
+                        @Html.AntiForgeryToken()
+                        <text>Enabled
+                        <input type="submit" value="Disable" class="btn btn-link" />
+                        </text>
                     }
-                    else
+                }
+                else
+                {
+                    using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                     {
-                        using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                        {
-                            @Html.AntiForgeryToken()
-                            <text>Disabled
-                            <input type="submit" value="Enable" class="btn btn-link" />
-                            </text>
-                        }
-                    }*@
+                        @Html.AntiForgeryToken()
+                        <text>Disabled
+                        <input type="submit" value="Enable" class="btn btn-link" />
+                        </text>
+                    }
+                }*@
             </dd>
         </dl>
-</div>
+    </div>

@@ -23,6 +23,7 @@ namespace IdentityTemplate.Controllers
             //manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
         }
 
+        //[Authorize(Roles ="Manager")]
         //
         // GET: /RoleAdmin/
         public ActionResult Index()
@@ -35,6 +36,7 @@ namespace IdentityTemplate.Controllers
             return View();
         }
 
+        //[Authorize(Roles ="Manager")]
         [HttpPost]
         public ActionResult Create([Required] string name)
         {
@@ -56,6 +58,7 @@ namespace IdentityTemplate.Controllers
             return View(name);
         }
 
+        //[Authorize(Roles ="Manager")]
         public ActionResult Edit(string id)
         {
             AppRole role = RoleManager.FindById(id);
@@ -65,6 +68,7 @@ namespace IdentityTemplate.Controllers
             return View(new RoleEditModel { Role = role, Members = members, NonMembers = nonMembers });
         }
 
+        //[Authorize(Roles ="Manager")]
         [HttpPost]
         public ActionResult Edit(RoleModificationModel model)
         {
@@ -120,6 +124,7 @@ namespace IdentityTemplate.Controllers
             }
         }
 
+        //[Authorize (Roles ="Employee")]
         public ActionResult AllCustomers()
         {
             //AppRole roleName = RoleManager.FindByName(role);
@@ -138,6 +143,23 @@ namespace IdentityTemplate.Controllers
 
             return View(model);
         }
+
+        //[Authorize (Roles ="Manager")]
+        public ActionResult AllEmployees()
+        {
+            //AppRole roleName = RoleManager.FindByName(role);
+
+            var allusers = db.Users.ToList();
+            var users = allusers.Where(x => x.Roles.Select(role => role.RoleId).Contains("f32fa611-547f-4761-bfa3-9682f677e04c")).ToList();
+            var userVM = users.Select(user => new UserViewModel { Username = user.UserName, Roles = string.Join(",", user.Roles.Select(role => role.RoleId)) }).ToList();
+
+            var managers = allusers.Where(x => x.Roles.Select(role => role.RoleId).Contains("99c46225-ddc3-46c9-8f04-223224399e61")).ToList();
+            var managersVM = managers.Select(user => new UserViewModel { Username = user.UserName, Roles = string.Join(",", user.Roles.Select(role => role.RoleId)) }).ToList();
+            var model = new GroupedUserViewModel { Customers = userVM, Managers = managersVM };
+
+            return View(model);
+        }
+
 
        
 	}

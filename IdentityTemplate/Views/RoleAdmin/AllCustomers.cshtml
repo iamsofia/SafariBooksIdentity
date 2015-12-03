@@ -1,22 +1,35 @@
-﻿
-@model IdentityTemplate.Models.GroupedUserViewModel
+﻿@model IdentityTemplate.Models.GroupedUserViewModel
 @{
     ViewBag.Title = "AllCustomers";
 }
 
 <h4>All Customers</h4>
-<div>
-    @foreach (var user in Model.Customers)
-    {
-        <p>
-            <strong>@user.Username | @user.Roles </strong>
-        </p>
-    }
 
-    @*@foreach (var user in Model.Users)
-        {
-            <p>
-                <strong>@user.Username | @user.Roles </strong>
-            </p>
-        }*@
-</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">All Customers</div>
+    <table class="table table-striped">
+        <tr>
+            <th>User Name</th>
+            <th>Details</th>
+            
+            </tr>
+
+
+                @foreach (var user in Model.Customers)
+                    {
+                    <tr>
+                        <td>
+                            <strong>@user.Username </strong>
+                        </td>
+                        <td>
+                            
+                            @*@Html.ActionLink("Details", "Index", "Manage", new { id = user.Id }, new { @class = "btn btn-primary btn-xs" }) |*@
+                            
+                        </td>
+                        </tr>
+                      
+                      }
+        </table>
+    </div>
+
+
