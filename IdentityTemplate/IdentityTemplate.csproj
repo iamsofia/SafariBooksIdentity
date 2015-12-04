@@ -169,6 +169,7 @@
     <Compile Include="Controllers\CreditCardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Controllers\RoleAdminController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -236,6 +237,10 @@
     <Compile Include="Migrations\201512010642519_id19.cs" />
     <Compile Include="Migrations\201512010642519_id19.Designer.cs">
       <DependentUpon>201512010642519_id19.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512040038124_ReviewClassUpdate.cs" />
+    <Compile Include="Migrations\201512040038124_ReviewClassUpdate.Designer.cs">
+      <DependentUpon>201512040038124_ReviewClassUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -326,6 +331,11 @@
     <Content Include="Views\CreditCard\Details.cshtml" />
     <Content Include="Views\CreditCard\Edit.cshtml" />
     <Content Include="Views\CreditCard\Index.cshtml" />
+    <Content Include="Views\Review\Create.cshtml" />
+    <Content Include="Views\Review\Delete.cshtml" />
+    <Content Include="Views\Review\Details.cshtml" />
+    <Content Include="Views\Review\Edit.cshtml" />
+    <Content Include="Views\Review\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -382,6 +392,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512010642519_id19.resx">
       <DependentUpon>201512010642519_id19.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512040038124_ReviewClassUpdate.resx">
+      <DependentUpon>201512040038124_ReviewClassUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

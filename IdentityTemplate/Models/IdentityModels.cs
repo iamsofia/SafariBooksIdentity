@@ -112,5 +112,7 @@ namespace IdentityTemplate.Models
         public System.Data.Entity.DbSet<IdentityTemplate.Models.RegisterViewModel> RegisterViewModels { get; set; }
 
         public System.Data.Entity.DbSet<IdentityTemplate.Models.CreditCard> CreditCards { get; set; }
+
+        public System.Data.Entity.DbSet<IdentityTemplate.Models.Review> Reviews { get; set; }
     }
 }
