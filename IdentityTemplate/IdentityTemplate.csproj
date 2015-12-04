@@ -165,6 +165,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\CouponController.cs" />
     <Compile Include="Controllers\CreditCardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -253,6 +254,10 @@
     <Compile Include="Migrations\201512040223525_135.cs" />
     <Compile Include="Migrations\201512040223525_135.Designer.cs">
       <DependentUpon>201512040223525_135.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512040237089_booksearch.cs" />
+    <Compile Include="Migrations\201512040237089_booksearch.Designer.cs">
+      <DependentUpon>201512040237089_booksearch.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -344,10 +349,14 @@
     <Content Include="Views\CreditCard\Edit.cshtml" />
     <Content Include="Views\CreditCard\Index.cshtml" />
     <Content Include="Views\Review\Create.cshtml" />
-    <Content Include="Views\Review\Delete.cshtml" />
     <Content Include="Views\Review\Details.cshtml" />
     <Content Include="Views\Review\Edit.cshtml" />
     <Content Include="Views\Review\Index.cshtml" />
+    <Content Include="Views\Book\Create.cshtml" />
+    <Content Include="Views\Book\Delete.cshtml" />
+    <Content Include="Views\Book\Details.cshtml" />
+    <Content Include="Views\Book\Edit.cshtml" />
+    <Content Include="Views\Book\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -416,6 +425,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512040223525_135.resx">
       <DependentUpon>201512040223525_135.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512040237089_booksearch.resx">
+      <DependentUpon>201512040237089_booksearch.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

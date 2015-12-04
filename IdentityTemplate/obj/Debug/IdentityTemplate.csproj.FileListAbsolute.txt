@@ -270,3 +270,4 @@ C:\Users\McCombs\Documents\GitHub\SafariBooksIdentity\IdentityTemplate\obj\Debug
 C:\Users\McCombs\Documents\GitHub\SafariBooksIdentity\IdentityTemplate\obj\Debug\IdentityTemplate.Migrations.Added.resources
 C:\Users\McCombs\Documents\GitHub\SafariBooksIdentity\IdentityTemplate\obj\Debug\IdentityTemplate.Migrations.ReviewTable.resources
 C:\Users\McCombs\Documents\GitHub\SafariBooksIdentity\IdentityTemplate\obj\Debug\IdentityTemplate.Migrations._135.resources
+C:\Users\McCombs\Documents\GitHub\SafariBooksIdentity\IdentityTemplate\obj\Debug\IdentityTemplate.Migrations.booksearch.resources
