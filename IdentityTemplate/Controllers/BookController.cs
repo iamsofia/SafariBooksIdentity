@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using IdentityTemplate.Models;
 
+
+
 namespace IdentityTemplate.Controllers
 {
     public class BookController : Controller
@@ -17,12 +19,12 @@ namespace IdentityTemplate.Controllers
         // GET: /Book/
         public ActionResult Index(string searchString)
         {
-            var books = from m in db.Books
+            var Books = from m in db.Books
                         select m;
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                books = books.Where(s => s.Title.Contains(searchString));
+                Books = Books.Where(m => m.Title.Contains(searchString));
             }
 
 
