@@ -246,6 +246,10 @@
     <Compile Include="Migrations\201512040056308_Added.Designer.cs">
       <DependentUpon>201512040056308_Added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512040146222_ReviewTable.cs" />
+    <Compile Include="Migrations\201512040146222_ReviewTable.Designer.cs">
+      <DependentUpon>201512040146222_ReviewTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
@@ -402,6 +406,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512040056308_Added.resx">
       <DependentUpon>201512040056308_Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512040146222_ReviewTable.resx">
+      <DependentUpon>201512040146222_ReviewTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

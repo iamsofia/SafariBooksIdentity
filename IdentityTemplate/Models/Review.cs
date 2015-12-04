@@ -18,7 +18,9 @@ namespace IdentityTemplate.Models
         [ForeignKey("SKU")]
         public virtual Book Book { get; set; }
 
+        [Display(Name="Customer Review")]
         public string CustomerReview { get; set; }
+
 
         public virtual AppUser User { get; set; }
 
@@ -26,6 +28,7 @@ namespace IdentityTemplate.Models
         [Display(Name="Approve/Reject")]
         public bool ReviewApproval { get; set; }
 
-        public int AverageRating { get; set; }
+        [Display(Name="Customer Rating")]
+        public int CustomerRating { get; set; }
     }
 }
