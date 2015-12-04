@@ -19,16 +19,18 @@ namespace IdentityTemplate.Controllers
         // GET: /Book/
         public ActionResult Index(string searchString)
         {
-            var Books = from m in db.Books
+            var books = from m in db.Books
                         select m;
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                Books = Books.Where(m => m.Title.Contains(searchString));
+                books = books.Where(s => s.Title.Contains(searchString));
+                
             }
 
 
             return View(db.Books.ToList());
+            
         }
 
         // GET: /Book/Details/5
