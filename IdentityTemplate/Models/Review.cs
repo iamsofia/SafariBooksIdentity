@@ -22,6 +22,8 @@ namespace IdentityTemplate.Models
 
         public virtual AppUser User { get; set; }
 
+
+        [Display(Name="Approve/Reject")]
         public bool ReviewApproval { get; set; }
     }
 }

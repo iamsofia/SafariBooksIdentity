@@ -17,6 +17,9 @@
         <th>
             @Html.DisplayNameFor(model => model.CustomerReview)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReviewApproval)
+        </th>
         <th></th>
     </tr>
 
@@ -27,6 +30,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CustomerReview)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReviewApproval)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ReviewID }) |
