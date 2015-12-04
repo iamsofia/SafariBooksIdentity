@@ -25,5 +25,7 @@ namespace IdentityTemplate.Models
 
         [Display(Name="Approve/Reject")]
         public bool ReviewApproval { get; set; }
+
+        public int AverageRating { get; set; }
     }
 }

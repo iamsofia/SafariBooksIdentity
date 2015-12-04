@@ -22,6 +22,8 @@ namespace IdentityTemplate.Models
 
         public virtual AppUser User { get; set; }
 
+        public int AverageRating { get; set; }
+
         //how to calculate average?
 
     }
