@@ -19,16 +19,19 @@ namespace IdentityTemplate.Models
         public virtual Book Book { get; set; }
 
         [Display(Name="Customer Review")]
+        [StringLength(100,ErrorMessage= "The book review cannot exceed 100 characters.")]
         public string CustomerReview { get; set; }
 
 
         public virtual AppUser User { get; set; }
-
+       // [ForeignKey("User")]
 
         [Display(Name="Approve/Reject")]
         public bool ReviewApproval { get; set; }
+        
 
         [Display(Name="Customer Rating")]
         public int CustomerRating { get; set; }
+
     }
 }
